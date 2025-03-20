@@ -1,1 +1,11 @@
-<p>order-modal works!</p>
+<div class="container" (click)="closeModal()">
+    <div class="modal" (click)="$event.stopPropagation()">
+        <img src="./assets/images/icon-order-confirmed.svg" alt="confirmed icon" class="">
+        <h2>Order confirmed</h2>
+        <div>We hope you enjoy your food</div>
+        @for (item of cartService.productsList; track $index){
+            <app-cart-list-item [item]="item" [deleteIcon]="false"></app-cart-list-item>
+        }
+        <button (click)="closeModal()">Close</button>
+    </div>
+</div>

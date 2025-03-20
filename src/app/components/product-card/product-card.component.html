@@ -1,1 +1,9 @@
-<p>product-card works!</p>
+<div class="card">
+    <div class="card-header">
+        <img [src]="product.image.desktop" />
+        <app-app-button (click)="clicked(product)" backgroundColor="#fff" iconUrl="./assets/images/icon-add-to-cart.svg" text="Add to cart" ></app-app-button>
+    </div>
+    <span class="product-category">{{ product.category }}</span>
+    <span class="product-name">{{ product.name}}</span>
+    <span class="product-price">${{ product.price }}</span>
+</div>

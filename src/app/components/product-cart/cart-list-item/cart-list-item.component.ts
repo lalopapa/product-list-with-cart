@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Product } from '../../../models/product';
+import { CartService } from '../../../services/cart.service';
 
 @Component({
   selector: 'app-cart-list-item',
@@ -7,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './cart-list-item.component.scss'
 })
 export class CartListItemComponent {
-
+  @Input() deleteIcon = true;
+  @Input() item!: {product: Product; count: number};
+  constructor(public readonly cartService: CartService) { }
 }

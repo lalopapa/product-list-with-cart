@@ -1,1 +1,13 @@
-<p>cart-list-item works!</p>
+<div class="container">
+    <div class="content">
+        <b>{{ item.product.name }}</b>
+        <span class="price-label">
+            <span>{{ item.count }}x</span>
+            <span>&#64;${{ item.product.price }}</span>
+            <span>${{ item.product.price * item.count }}</span>
+        </span>
+    </div>
+    @if(deleteIcon) {
+        <img (click)="cartService.removeProduct(item.product.name)" src="./assets/images/icon-remove-item.svg" />
+    }
+</div>

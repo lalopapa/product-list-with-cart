@@ -16,6 +16,17 @@
 
 + Search
 + Not found page 404 -->
-<div>
-  <img [src]="productsList[0].image.thumbnail" />
+<div class="layout">
+  <div class="products-container">
+    <h2 class="subtitle">Desserts</h2>
+    <div class="products-list">
+      @for (product of productsList; track product.name) {
+        <app-product-card [product]="product" ></app-product-card>
+      }
+    </div>
+  </div>
+  <app-product-cart (orderClicked)="showModal = true"></app-product-cart>
+  @if(showModal) {
+    <app-order-modal (closeClicked)="showModal = false"></app-order-modal>
+  }
 </div>

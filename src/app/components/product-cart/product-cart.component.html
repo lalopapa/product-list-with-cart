@@ -1,1 +1,19 @@
-<p>product-cart works!</p>
+<div class="cart-container">
+    <span class="cart-header">Your Cart ({{ cartService.productsList.length }})</span>
+    @if (!cartService.productsList.length) {
+        <img src="./assets/images/illustration-empty-cart.svg" />
+        <span class="cart-info">Your added items will appear here</span>
+    } @else {
+        @for (item of cartService.productsList; track $index) {
+            <app-cart-list-item [item]="item" ></app-cart-list-item>
+        }
+        <div class="total">
+            <span>Total</span>
+            <span>${{cartService.getTotal()}}</span>
+        </div>
+        <div class="btn-container">
+            <button (click)="orderClicked.emit()" >Confirm Order</button>
+        </div>
+    }
+    
+</div>

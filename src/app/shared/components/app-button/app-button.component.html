@@ -1,1 +1,4 @@
-<p>app-button works!</p>
+<button (click)="clicked($event)" [ngStyle]="{ 'background-color': backgroundColor}" >
+    <img [src]="iconUrl" />
+    {{ text }}
+</button>

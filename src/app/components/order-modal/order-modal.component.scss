@@ -1,0 +1,17 @@
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000080;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.modal {
+    background-color: #fff;
+    width: 200px;
+    height: 200px;
+}
